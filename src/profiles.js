@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Profile from './component/profile.js';
+import Profile from './component/personalizedprofile';
 
 
 
@@ -64,16 +64,17 @@ export default class Profiles extends React.Component {
  
    
     
-    <div className="App">
+    <div >
      
      
-     <div  style={{display:'flex',justifyContent:'space-around',flexWrap:'wrap'}}>
+     <div style={{display:'flex',flexDirection:'row', flexWrap:'wrap', justifyContent:'space-around'}}>
      {this.state.users.map(e=>
      <Profile 
      id={e.id}
      name={e.name}
      profession={e.company.bs}
      description={e.company.catchPhrase}
+     src={`http://lorempixel.com/100/100/people/${e.id}/`}
      link={`/${e.id}`}
      />)}
 

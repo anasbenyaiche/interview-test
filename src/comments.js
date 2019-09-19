@@ -1,6 +1,7 @@
 import React from 'react';
-import Comment from './component/comment'
+import PersonalizedComment from './component/personalizedcomment'
 import {Link } from 'react-router-dom'
+import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
 
 
@@ -41,11 +42,15 @@ export default class Comments extends React.Component{
         return(<div>
             <Link to='/'>Go Back to home page</Link>
               <div>
-      {this.state.comments.map(e=><Comment 
+              <Comment.Group>
+    <Header as='h3' dividing>
+      Comments
+    </Header>
+      {this.state.comments.map(e=>   <PersonalizedComment 
         id={e.id} 
         name={e.name}
         contain={e.body}/>
-        )}</div>
+        )}</Comment.Group></div>
         </div>)
     }
 }

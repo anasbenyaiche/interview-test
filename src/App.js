@@ -4,6 +4,8 @@ import Posts from './posts'
 import Profiles from './profiles';
 import Comments from './comments'
 import {BrowserRouter, Route} from 'react-router-dom';
+import Comment from './component/personalizedcomment';
+import Profile from './component/personalizedprofile'
 
 
 class App extends React.Component {
@@ -32,6 +34,8 @@ class App extends React.Component {
    
     
     <div className="App">
+     
+    
     <Route exact path='/' component={Profiles}/>
     <Route exact  path='/:id' component={Posts}/>
     <Route exact path={`/post/:id`} component={Comments}/>
